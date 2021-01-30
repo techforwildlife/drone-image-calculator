@@ -13,3 +13,15 @@ function calcDiagonalLength(droneHeight, aovRadians) {
         return null;
     return 2 * droneHeight * Math.tan(aovRadians/2);
 }
+
+function calcSideA(diagonalLength, aspectRatio) {
+    if (!diagonalLength || !aspectRatio)
+        return null;
+    return diagonalLength / Math.sqrt( 1 + Math.pow(aspectRatio, 2));
+}
+
+function calcSideB(sideA, aspectRatio) {
+    if (!sideA || !aspectRatio)
+        return null;
+    return sideA * aspectRatio;
+}
