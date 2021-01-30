@@ -20,3 +20,7 @@ aovRadians.change((event) => {
     aovDegrees.val(degrees);
     resetDiagonalLength(droneHeight.val(), event.target.value);
 })
+
+droneHeight.change((event) => {
+    resetDiagonalLength(event.target.value, aovRadians.val());
+})
